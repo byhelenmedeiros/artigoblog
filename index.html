@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+    <div class="container_artigo">
+        <p class="feedback_artigo">Este artigo foi útil?</p>
+        <i class="fa-regular fa-thumbs-up fa-xl" id="gosto"></i>
+        <i class="fa-regular fa-thumbs-down fa-xl"id="naogosto"></i>
+
+                    
+        <div id="mensagemGosto" class="mensagem" style="display:none;"/>Ainda bem que gostou deste artigo!</div>
+        <div id="mensagemNaoGosto" class="mensagem" style="display:none;">Lamentamos que o artigo não tenha sido útil pra si. Se precisar de ajuda, entre em contacto connosco!</div>
+    </div>
+    <script>
+        let likegosto = document.getElementById("gosto");
+        let likenaogosto = document.getElementById("naogosto");
+        let mensagemGosto = document.getElementById("mensagemGosto");
+        let mensagemNaoGosto = document.getElementById("mensagemNaoGosto");
+        let botoes = document.getElementById("botoes");
+
+        likegosto.addEventListener("click", function() {
+            // Exibir mensagem de "gosto" e esconder outros elementos
+            mensagemGosto.style.display = "block";
+            mensagemNaoGosto.style.display = "none";
+            botoes.style.display = "none";
+        });
+
+        likenaogosto.addEventListener("click", function() {
+            mensagemGosto.style.display = "none";
+            mensagemNaoGosto.style.display = "block";
+            botoes.style.display = "none";
+        });
+
+    </script>
+    <style>
+        .container_artigo{
+                text-align: center
+        }        
+        .feedback_artigo{
+            color: black;
+            font-weight: 600;
+            
+        }
+        #gosto, #naogosto{
+            margin-left: 15px;
+            color: #4C3E94;
+        }
+        
+        #mensagemGosto, #mensagemNaoGosto{
+            color: white;
+            background: #4C3E94;
+            width: 300px;
+            padding: 15px;
+            margin: auto;
+            margin-top: 20px;
+            border-radius: 8px;
+        
+            
+        }
+    </style>
+
+</html>
+
+
